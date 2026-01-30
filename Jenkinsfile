@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'venv\\Scripts\\pip install --upgrade pip'
+                bat 'venv\\Scripts\\python -m pip install --upgrade pip'
                 bat 'venv\\Scripts\\pip install pandas numpy scikit-learn flask streamlit'
             }
         }
@@ -22,7 +22,3 @@ pipeline {
         }
     }
 }
-
-
-
-
