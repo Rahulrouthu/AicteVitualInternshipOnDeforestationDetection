@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Rahulrouthu/AicteVirtualInternshipOnDeforestationDetection.git'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh 'python -m pip install --upgrade pip'
@@ -22,3 +16,4 @@ pipeline {
         }
     }
 }
+
