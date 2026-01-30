@@ -5,7 +5,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 bat 'python -m pip install --upgrade pip'
-                bat 'pip install pandas numpy scikit-learn flask'
+                bat 'pip install pandas numpy scikit-learn flask streamlit'
             }
         }
 
@@ -16,5 +16,6 @@ pipeline {
         }
     }
 }
+
 
 
