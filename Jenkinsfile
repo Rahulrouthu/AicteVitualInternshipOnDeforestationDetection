@@ -2,20 +2,27 @@ pipeline {
     agent any
 
     stages {
+        stage('Setup venv') {
+            steps {
+                bat 'python -m venv venv'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install --upgrade pip'
-                bat 'pip install pandas numpy scikit-learn flask streamlit'
+                bat 'venv\\Scripts\\pip install --upgrade pip'
+                bat 'venv\\Scripts\\pip install pandas numpy scikit-learn flask streamlit'
             }
         }
 
         stage('Run App') {
             steps {
-                bat 'python app.py'
+                bat 'venv\\Scripts\\python app.py'
             }
         }
     }
 }
+
 
 
 
